@@ -1,0 +1,266 @@
+@font-face {
+    /* Define uma fonte personalizada importada de um arquivo local */
+    font-family: 'product-sans';
+    src:url(./fonts/Fonts/Product\ Sans\ Bold.ttf);
+}
+* {
+    /* O asterisco (*) seleciona TODOS os elementos da página */
+    /* Removemos margens e preenchimentos padrão para ter controle total */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: product-sans;
+}
+
+html,body{
+    width: 100%;
+    overflow-x: hidden;
+     /* O overflow-x: hidden; é uma propriedade CSS que controla o comportamento do conteúdo que ultrapassa a largura do elemento. Quando definido como hidden, qualquer conteúdo que exceda a largura do elemento será ocultado, e não haverá barra de rolagem horizontal para acessar esse conteúdo. Isso é útil para evitar que elementos se estendam além dos limites visíveis da página, garantindo um layout mais limpo e organizado. */
+}
+
+body::-webkit-scrollbar{
+    display: none;
+    /* o -webkir-scrollbar seleciona a barra de rolagem e o display: none; desabilita ela */
+    display: none;
+    /* o -webkit-scrollbar seleciona a barra de rolagem e o display: none; desabilita ela */
+
+}
+
+#main {
+    /* Container principal que envolve todo o site */
+    /* height: 100%; removido para o container crescer junto com o conteúdo */
+    width: 100%;    
+    background: orangered;
+    overflow: hidden; /* Garante que nada vaze para fora da largura/altura */
+}
+
+.nav-container {
+    /* Barra de navegação fixa no topo */
+    margin: 20px;
+    font-size: 24px;
+    position: fixed;
+    /* usamos o position: fixed; para falar que o atributo é fixo na tela independente se voce mover ele ainda via continuar na tela  */
+    display: flex;
+    /* Usamos o display: flex; para colocar a coluna em flex no caso na vertical " detalhe importante ela nao usara 100% da tela entao voce vai ter que extilizar isso tanbem com o width ou height por exemplo */
+    align-items: center;
+    /* usamos o align-items: center; para alinhar items ao centro*/
+    justify-content: space-between;
+    /* O comando justify-content: space-between; no CSS é uma propriedade Flexbox que distribui itens horizontalmente "ou verticalmente, se a flex-direction for column", fixando o primeiro item na borda inicial e o último na borda final, com espaço igual entre eles. É perfeito para menus, onde itens ficam nas extremidades */
+    width: calc(100% - 40px);
+    height: 10vh;
+    /* VH "Viewport Height" é uma unidade de medida relativa no CSS que equivale a 1% da altura da área visível 'viewport' do navegado */
+    z-index: 99;
+    /*usamos o z-index: 99; para passar por cima de outros elementos*/
+ }
+ .nav-container img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    /* O object-fit: cover; é uma propriedade CSS que controla como o conteúdo de um elemento, como uma imagem ou vídeo, é redimensionado para se encaixar em seu contêiner. Quando definido como cover, o conteúdo é redimensionado para preencher completamente o contêiner, mantendo sua proporção original. Se as proporções do conteúdo e do contêiner forem diferentes, partes do conteúdo podem ser cortadas para garantir que ele preencha o espaço disponível sem distorção. */
+
+ }
+ .nav-container img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    z-index: 9999;
+    }
+ .nav-menu {
+    /* Container dos links do menu (Home, Produtos, etc) */
+    display: flex;
+    gap: 50px;
+    /* O gap: 20px; é uma propriedade CSS que define o espaço entre os itens em um layout flexível ou em grade. Ele é usado para criar um espaçamento uniforme entre os elementos, melhorando a legibilidade e a estética do design.*/
+ }
+ .nav-menu a {
+    /* Estilo dos links individuais */
+    text-decoration: none;
+    /* O text-decoration: none; é uma propriedade CSS que remove a decoração padrão de um elemento, como sublinhado em links. Isso é útil para criar um estilo personalizado para os links, permitindo que você controle completamente sua aparência sem a interferência das decorações padrão do navegador. */
+    color: white;
+ }
+ .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(150deg, rgb(255,166,0), rgb(255,94,0));
+    position: relative;
+     /* O background: linear-gradient(150deg, rgb(255,166,0), rgb(255,0,0)); é uma propriedade CSS que cria um plano de fundo com um gradiente linear. O gradiente começa em um ângulo de 150 graus e transita suavemente entre as cores especificadas, neste caso, do laranja (rgb(255,166,0)) para o vermelho (rgb(255,0,0)). Isso adiciona um efeito visual atraente ao elemento, tornando-o mais dinâmico e interessante. */
+ }
+.hero h1 {
+        /* Título gigante "FANTA" */
+        width: 100%;
+        text-align: center; 
+        font-size: 55vh;
+        color: white;
+    }
+.hero img {
+        /* Configuração geral para todas as imagens dentro do Hero */
+        z-index: 1;
+        position: absolute;
+        will-change: transform;
+}
+
+#lata-fanta { 
+        /* Posicionamento inicial da lata principal */
+        position: absolute;
+        width: 40%;
+        left: 30%;
+    }
+#laranja-cortada {
+        /* Laranja que fica perto da lata */
+        position: absolute;
+        width: 15%;
+        top: 10%;
+        left: 32%;
+        z-index: 2;
+    }
+#varias-laranjas {
+        /* Grupo de laranjas no fundo */
+        position: absolute;
+        width: 20%;
+        top: 55%;
+        right: 30%;
+        z-index: 3;
+    }
+#folha { 
+        /* Folha decorativa esquerda */
+        position: absolute;
+        top: 10%;
+        left: 0%;
+        width: 18%;
+        transform: rotate(60deg);
+    }
+
+#folha2 {
+        /* Folha decorativa direita inferior */
+        position: absolute;
+        top: 70%;
+        left: 80%;
+        width: 14%;
+        transform: rotate(90deg);
+    }
+
+#folha3 {
+        /* Folha decorativa direita superior */
+        position: absolute;
+        top: 10%;
+        right: 0%;
+        width: 20%;
+    }
+.two {
+        /* Segunda seção (marrom) */
+        display: flex;
+        width: 100%;
+        height: 110vh;
+        background: #4d231c;
+    }
+.two .left-side {
+
+    z-index: 0;
+    position: relative
+
+    }  
+.left-side,.right-side {
+        /* Divide a seção 2 em duas colunas iguais (texto e imagem) */
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5vh;
+        width: 50%;
+        height: 100%;
+    }
+.left-side img {
+        /* Imagem "blob" (forma orgânica) na esquerda */
+        margin-top: 50vh;
+        margin-bottom: 10vh;
+        width: 70%;
+        transform: rotate(50deg);
+        object-fit: cover;
+    }
+.right-side h2 {
+        /* Título da seção 2 */
+        font-size: 5vh;
+        color: white;
+    }
+.right-side p {
+        /* Parágrafo de texto da seção 2 */
+        font-size: 5vh;
+        color: white;
+        width: 80%;
+    }
+
+.tre {
+        /* Terceira seção (Cards de produtos) */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 5vh;
+        background: linear-gradient(150deg, rgb(255,166,0), rgb(255,94,0));
+    }
+.card h3 {
+        /* Nome do produto dentro do card */
+        font-size: 3vw;
+        margin-top: 38vh;
+        color: rgb(0, 0, 0);
+    }
+.card button {
+        /* Botão "Comprar Agora" */
+        font-size: 1vw;
+        border-radius: 50px;
+        border: none;
+        background-color: rgb(255, 149, 0);
+        color: white;
+        padding: 1vw 2vw;
+        cursor: pointer;
+
+    }
+.card {
+    /* Estilo do cartão branco (fundo, bordas arredondadas, sombra) */
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: white;
+    width: 25vw;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vh;
+    height: 70vh;
+    margin-top: 10vh;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+#cocacola {
+    /* Imagem da Coca-Cola posicionada acima do card */
+    position: absolute;
+    width: 115%;
+    top: -15%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+#pepsi {
+    /* Imagem da Pepsi posicionada acima do card */
+    position: absolute;
+    width: 115%;
+    top: -15%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+.limao {
+    /* Limão decorativo do card 1 */
+    position: absolute;
+    width: 18vw;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+.limao2 {
+    /* Limão decorativo do card 3 */
+    position: absolute;
+    width: 18vw;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
